@@ -18,6 +18,8 @@ public struct Comment: Wrapped {
     public var text: String! { self["text"].string() }
     /// The `commentLikeCount` value.
     public var likes: Int? { self["commentLikeCount"].int() }
+    /// The time at which the media was captured.
+    public var takenAt: Date? { self["createdAt"].date() }
     /// The `user` value.
     public var user: User? {
         (self["user"].optional() ?? self["owner"].optional())
